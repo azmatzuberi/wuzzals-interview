@@ -10,7 +10,7 @@
             <template #list="slotProps">
 
                 <!-- Filtering of hops with Centennial -->
-                <div class="col-12" v-if="slotProps.data.ingredients.hops.filter(e => e.name !== 'Centennial').length > 0">
+                <div class="col-12" v-if="!slotProps.data.ingredients.hops.filter(e => e.name === 'Centennial').length > 0">
                     <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
                         <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round"
                             :src="slotProps.data.image_url" :alt="slotProps.data.name" />
@@ -48,12 +48,12 @@
                             slotProps.data.description }}</span>
                     </div>
                     <div class="flex p-4">
-                        <i class="pi pi-hourglass self-center mr-2.5 ml-14"></i>
+                        <i class="pi pi-bolt self-center mr-2.5 ml-14"></i>
                         <span> ABV: {{
                             slotProps.data.abv }}</span>
                     </div>
                     <div class="flex p-4">
-                        <i class="pi pi-bolt self-center mr-2.5 ml-14"></i>
+                        <i class="pi pi-hourglass self-center mr-2.5 ml-14"></i>
                         <span> IBU: {{
                             slotProps.data.ibu }}</span>
                     </div>
